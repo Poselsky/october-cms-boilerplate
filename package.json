@@ -1,0 +1,24 @@
+{
+  "name": "lara-cms",
+  "version": "1.0.0",
+  "main": "client/src/main.js",
+  "author": "Oleg Musijenko",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "2.3.0",
+    "cross-env": "^7.0.3",
+    "postcss": "8.1",
+    "laravel-mix": "^6.0.13"
+  },
+  "dependencies": {
+  }
+}

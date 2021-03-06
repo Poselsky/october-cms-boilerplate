@@ -1,0 +1,32 @@
+1615048107a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:304:"description = "default layout"
+==
+function onStart()
+{
+    $this["scriptSource"] = mix("dist/main.js", "public");
+}
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% placeholder head %}
+</head>
+<body>
+    {% page %}
+
+    <script src="{{ scriptSource }}" defer></script>
+</body>
+</html>
+";s:5:"mtime";i:1615024954;s:6:"markup";s:176:"<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% placeholder head %}
+</head>
+<body>
+    {% page %}
+
+    <script src="{{ scriptSource }}" defer></script>
+</body>
+</html>";s:4:"code";s:84:"function onStart()
+{
+    $this["scriptSource"] = mix("dist/main.js", "public");
+}";s:11:"description";s:14:"default layout";}}
