@@ -4,13 +4,13 @@ const chokidar = require('chokidar');
 
 mix.js('client/main.js', 'dist');
 
-let browserSy;
-const themeWatcher = chokidar.watch('themes');
-themeWatcher.on('all', (event, p) => {
-    if(browserSy) browserSy.publicInstance.reload();
-});
 
-if(process.env.NODE_ENV == 'development'){
+if(process.env.NODE_ENV == 'development' && process.env.HOT){
+    let browserSy;
+    const themeWatcher = chokidar.watch('themes');
+    themeWatcher.on('all', (event, p) => {
+        if(browserSy) browserSy.publicInstance.reload();
+    });
     mix
         .browserSync({
             logFileChanges: true,
@@ -25,11 +25,11 @@ if(process.env.NODE_ENV == 'development'){
             injectChanges: false,
         })
         .disableNotifications();
+
+        process.on('SIGINT', () => {
+            console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+            themeWatcher.close();
+
+            process.exit( );
+        });
 }
-
-process.on('SIGINT', () => {
-    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
-    themeWatcher.close();
-
-    process.exit( );
-});
