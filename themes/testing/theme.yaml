@@ -1,9 +1,0 @@
-name: "testing"
-description: "No description provided yet..."
-author: "October CMS Scaffold"
-homepage: "https://example.com"
-code: "testing"
-form:
-    fields:
-        googleanalytics_id:
-            label: 'Google Analytics ID'
