@@ -1,16 +1,32 @@
+# Composer ignores
+/vendor
 composer.phar
-/vendor/
+composer.lock
 
-node_modules/
-npm-debug.log
-yarn-error.log
-
-storage/*.key
+# Framework ignores
 .env
-Homestead.yaml
-Homestead.json
-/.vagrant
+.env.*.php
+.env.php
+selenium.php
+/bootstrap/compiled.php
 .phpunit.result.cache
 
-*.meta.*
-_ide_*
+# Hosting ignores
+php_errors.log
+nginx-error.log
+nginx-access.log
+nginx-ssl.access.log
+nginx-ssl.error.log
+sftp-config.json
+.ftpconfig
+
+# Editor ignores
+nbproject
+.idea
+.vscode
+_ide_helper.php
+
+# Other ignores
+.DS_Store
+package-lock.json
+/node_modules
